@@ -34,3 +34,20 @@ TEST(Uvarkin_Ilya_ComplexNumberTest, SumComplexNumber) {
   ASSERT_EQ(rez.getIm(), 5);
 }
 
+TEST(Uvarkin_Ilya_ComplexNumberTest, MultipleComplexNumber) {
+  ComplexNumber num1(5, 10);
+  ComplexNumber num2(2, -5);
+
+  ComplexNumber rez = num1 * num2;
+
+  ASSERT_EQ(rez.getRe(), 60);
+  ASSERT_EQ(rez.getIm(), -5);
+}
+
+TEST(Uvarkin_Ilya_ComplexNumberTest, DivideComplexNumberWithZero) {
+  ComplexNumber num1(0, 0);
+  ComplexNumber num2(0, 0);
+
+  ASSERT_THROW((num1 / num2), std::string);
+}
+
