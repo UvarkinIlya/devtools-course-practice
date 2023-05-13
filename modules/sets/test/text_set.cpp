@@ -5,7 +5,7 @@
 #include "include/set.h"
 
 TEST(Set, assert_no_throw_in_default_constructor) {
-  ASSERT_NO_THROW(Set set());
+  ASSERT_NO_THROW(Set set);
 }
 
 TEST(Set, assert_no_throw_in_constructor) {

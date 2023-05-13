@@ -18,9 +18,9 @@ void Set::erase(int elem) {
   }
 }
 
-const bool Set::isExit(int elem) {
+bool Set::isExit(int elem) {
   auto it = std::find(elems.begin(), elems.end(), elem);
-  return it != elems.end() ? true : false;
+  return it != elems.end();
 }
 
 Set operator&(const Set &set1, const Set &set2) {
