@@ -5,7 +5,7 @@
 #include <vector>
 
 class Set{
-public:
+ public:
     void insert(int elem);
     void erase(int elem);
     int count(int elem);
@@ -18,6 +18,6 @@ public:
     friend Set operator & (const Set& set1, const Set& set2);
     friend Set operator | (const Set& set1, const Set& set2);
     friend Set operator - (const Set& set1, const Set& set2);
-private:
+ private:
     std::vector<int> elems;
 };
