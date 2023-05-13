@@ -47,7 +47,7 @@ TEST(Set, set_union) {
   Set set = set1 | set2;
 
   ASSERT_EQ(set.getElems().size(), ElemsExpect.size());
-  for (long unsigned int i = 0; i < set.getElems().size(); ++i) {
+  for (size_t i = 0; i < set.getElems().size(); ++i) {
       EXPECT_EQ(set.getElems()[i], ElemsExpect[i]);
   }
 }
@@ -60,7 +60,7 @@ TEST(Set, set_union_2) {
   Set set = set1 | set2;
 
   ASSERT_EQ(set.getElems().size(), ElemsExpect.size());
-  for (long unsigned int i = 0; i < set.getElems().size(); ++i) {
+  for (size_t i = 0; i < set.getElems().size(); ++i) {
     EXPECT_EQ(set.getElems()[i], ElemsExpect[i]);
   }
 }
@@ -73,7 +73,7 @@ TEST(Set, set_intersection) {
   Set set = set1 & set2;
 
   ASSERT_EQ(set.getElems().size(), ElemsExpect.size());
-  for (long unsigned int i = 0; i < set.getElems().size(); ++i) {
+  for (size_t i = 0; i < set.getElems().size(); ++i) {
     EXPECT_EQ(set.getElems()[i], ElemsExpect[i]);
   }
 }
@@ -86,7 +86,7 @@ TEST(Set, set_difference) {
   Set set = set1 - set2;
 
   ASSERT_EQ(set.getElems().size(), ElemsExpect.size());
-  for (long unsigned int i = 0; i < set.getElems().size(); ++i) {
+  for (size_t i = 0; i < set.getElems().size(); ++i) {
     EXPECT_EQ(set.getElems()[i], ElemsExpect[i]);
   }
 }
