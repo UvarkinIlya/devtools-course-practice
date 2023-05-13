@@ -80,8 +80,9 @@ Set operator-(const Set &set1, const Set &set2) {
   Set set;
 
   size_t index2 = 0;
-  for (long unsigned int i = 0; i < set1.getElems().size(); ++i) {
-    if(index2 >= set2.getElems().size() || set1.getElems()[i] < set2.getElems()[index2]) {
+  for (size_t i = 0; i < set1.getElems().size(); ++i) {
+    if (index2 >= set2.getElems().size() ||
+    set1.getElems()[i] < set2.getElems()[index2]) {
       set.elems.push_back(set1.getElems()[i]);
       continue;
     }
