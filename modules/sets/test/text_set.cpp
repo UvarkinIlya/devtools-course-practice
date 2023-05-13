@@ -12,22 +12,22 @@ TEST(Set, assert_no_throw_in_constructor) {
   ASSERT_NO_THROW(Set set(std::vector<int>{1, 2, 3, 42}));
 }
 
-TEST(Set, count_elem_not_exist) {
+TEST(Set, elem_not_exist) {
   Set set;
 
-  EXPECT_EQ(set.count(42), 0);
+  EXPECT_EQ(set.isExit(42), false);
 }
 
-TEST(Set, count_elem_exist) {
+TEST(Set, elem_exist) {
   Set set;
   set.insert(42);
-  EXPECT_EQ(set.count(42), 1);
+  EXPECT_EQ(set.isExit(42), true);
 }
 
 TEST(Set, insert_elem) {
   Set set;
   set.insert(42);
-  EXPECT_EQ(set.count(42), 1);
+  EXPECT_EQ(set.isExit(42), true);
 }
 
 TEST(Set, erase_elem) {
@@ -36,7 +36,7 @@ TEST(Set, erase_elem) {
   set.insert(42);
   set.erase(42);
 
-  EXPECT_EQ(set.count(42), 0);
+  EXPECT_EQ(set.isExit(42), false);
 }
 
 TEST(Set, set_union) {

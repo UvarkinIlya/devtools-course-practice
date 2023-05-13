@@ -8,11 +8,11 @@ class Set{
  public:
     void insert(int elem);
     void erase(int elem);
-    int count(int elem);
+    const bool isExit(int elem);
 
     const std::vector<int> &getElems() const;
 
-    Set();
+    Set()=default;
     explicit Set(const std::vector<int> &elems) : elems(elems) {}
 
     friend Set operator & (const Set& set1, const Set& set2);

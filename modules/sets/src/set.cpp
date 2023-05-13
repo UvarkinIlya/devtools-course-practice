@@ -3,10 +3,6 @@
 #include <algorithm>
 #include "../include/set.h"
 
-Set::Set() {
-  elems = std::vector<int>{};
-}
-
 const std::vector<int> &Set::getElems() const {
   return elems;
 }
@@ -22,9 +18,9 @@ void Set::erase(int elem) {
   }
 }
 
-int Set::count(int elem) {
+const bool Set::isExit(int elem) {
   auto it = std::find(elems.begin(), elems.end(), elem);
-  return it != elems.end() ? 1 : 0;
+  return it != elems.end() ? true : false;
 }
 
 Set operator&(const Set &set1, const Set &set2) {
