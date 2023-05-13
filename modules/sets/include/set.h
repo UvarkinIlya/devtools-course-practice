@@ -12,7 +12,7 @@ class Set{
 
     const std::vector<int> &getElems() const;
 
-    Set()=default;
+    Set() = default;
     explicit Set(const std::vector<int> &elems) : elems(elems) {}
 
     friend Set operator & (const Set& set1, const Set& set2);
