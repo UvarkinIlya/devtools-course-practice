@@ -1,4 +1,4 @@
-// Copyright 2017 Korniakov Kirill
+// Copyright 2023 Uvarkin Ilya
 
 #include "include/code_vijener.h"
 #include "include/code_vijener_application.h"
