@@ -3,6 +3,8 @@
 #include <algorithm>
 #include "../include/set.h"
 
+Set::Set(const std::vector<int> &elems) : elems(elems) {}
+
 const std::vector<int> &Set::getElems() const {
   return elems;
 }
