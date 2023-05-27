@@ -12,5 +12,6 @@ class CodeVijenerApplication {
  private:
     void help(const char* appname, const char* message = "");
     bool validateArguments(int argc, const char** argv);
+    bool onlyEnglishChars(const std::string& word);
     std::string _message;
 };

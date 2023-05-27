@@ -4,7 +4,7 @@
 #include "include/code_vijener_application.h"
 
 #include <string>
-#include <regex>
+#include <cstring>
 
 CodeVijenerApplication::CodeVijenerApplication(): _message("") {}
 
@@ -49,11 +49,15 @@ bool CodeVijenerApplication::validateArguments(int argc, const char **argv) {
     return false;
   }
 
-  std::regex regex("[a-zA-Z]+");
-  if (!std::regex_match(argv[2], regex) || !std::regex_match(argv[3], regex)) {
+  if (!onlyEnglishChars(argv[2]) || !onlyEnglishChars(argv[3])) {
     help(argv[0], "ERROR: should be English characters only.\n\n");
     return false;
   }
 
   return true;
+}
+
+bool CodeVijenerApplication::onlyEnglishChars(const std::string &word) {
+  return std::all_of(word.begin(), word.end(),
+          [](char ch){ return ch >= 'A' && ch <= 'z'; });
 }
