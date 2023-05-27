@@ -13,18 +13,12 @@ std::string CodeVijenerApplication::operator()(int argc, const char **argv) {
     return _message;
   }
 
-  try {
-    Code_vijener Code_vijener(argv[2], argv[3]);
-    if (strcmp(argv[1], "encode") == 0) {
-      return Code_vijener.Encoder();
-    } else if (strcmp(argv[1], "decode") == 0) {
-      return Code_vijener.Decoder();
-    }
-  } catch (std::string& str) {
-    return str;
+  Code_vijener Code_vijener(argv[2], argv[3]);
+  if (strcmp(argv[1], "encode") == 0) {
+    return Code_vijener.Encoder();
+  } else {
+    return Code_vijener.Decoder();
   }
-
-  return "";
 }
 
 void CodeVijenerApplication::help(const char *appname, const char *message) {
